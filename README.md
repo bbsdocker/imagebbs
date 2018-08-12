@@ -1,5 +1,7 @@
 # imagebbs: 印象。ＢＢＳ
 
+![](https://i.imgur.com/IGpjoDE.png)
+
 **注意：仍在測試階段，建請先自行檢閱過相關腳本再自行安裝，歡迎利用 issues 或 pull requests 功能提出任何建議**
 
 ## 步驟
