@@ -7,7 +7,7 @@ RUN apt update \
         bmake \
         ccache \
         clang \
-        git \
+	curl \
         ca-certificates \
         libevent-dev \
         pkg-config \
@@ -22,11 +22,10 @@ USER bbs
 ENV HOME=/home/bbs
 
 RUN cd /home/bbs \
-    && git clone http://github.com/ptt/pttbbs \
-    && cd /home/bbs/pttbbs \
-    && cp sample/pttbbs.conf /home/bbs/pttbbs/pttbbs.conf
-RUN echo '#define TIMET64' >> /home/bbs/pttbbs/pttbbs.conf 
-RUN echo '#define SHMALIGNEDSIZE (1048576*4)' >> /home/bbs/pttbbs/pttbbs.conf
+    && sh -c "curl -L https://github.com/ptt/pttbbs/archive/ae32c2897c33e3a62f8fc58ced187337cd4c6fd4.tar.gz | tar -zxv" \
+    && mv pttbbs-ae32c2897c33e3a62f8fc58ced187337cd4c6fd4 pttbbs \
+    && cd /home/bbs/pttbbs 
+COPY pttbbs.conf /home/bbs/pttbbs/pttbbs.conf
 RUN cd /home/bbs/pttbbs && bmake all install clean
 
 RUN cd /home/bbs/pttbbs/sample \
