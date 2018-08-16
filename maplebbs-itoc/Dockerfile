@@ -6,8 +6,6 @@ RUN yum update -y && \
                 gcc \
                 make \
 		patch \
-                vim \
-                clang \
 		glibc-devel \
 		glibc-devel.i686 \
                 libgcc.i686 \

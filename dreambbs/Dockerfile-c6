@@ -7,7 +7,6 @@ RUN yum update -y \
 		util-linux-ng \
                 gcc \
                 make \
-                vim \
                 clang \
 		glibc-devel \
                 glibc-devel.i686 \

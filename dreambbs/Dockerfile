@@ -6,7 +6,6 @@ RUN yum update -y \
     && yum install --nogpgcheck -y \
                 gcc \
                 make \
-                vim \
                 clang \
 		glibc-devel \
                 glibc-devel.i686 \
