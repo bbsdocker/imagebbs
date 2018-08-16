@@ -32,6 +32,6 @@ RUN cd /home/bbs/pttbbs/sample \
     && bmake install \
     && /home/bbs/bin/initbbs -DoIt
 
-# Notice, in here, mbbsd started service and PROVIDE UTF-8 encoding for users, if you prefer BIG-5, just remove `-e utf8`.
-CMD ["sh","-c","/home/bbs/bin/shmctl init && /home/bbs/bin/mbbsd -d -e utf8 -p 8888 && while true; do sleep 10; done"]
+CMD ["sh","-c","/home/bbs/bin/shmctl init && /home/bbs/bin/mbbsd -d -p 8888 && /home/bbs/bin/mbbsd -d -e utf8 -p 8889 && while true; do sleep 10; done"]
 EXPOSE 8888
+EXPOSE 8889

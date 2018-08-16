@@ -1,30 +1,32 @@
 # imagebbs: 印象。ＢＢＳ
 
-![](https://i.imgur.com/IGpjoDE.png)
-
-**注意：仍在測試階段，建請先自行檢閱過相關腳本再自行安裝，歡迎利用 issues 或 pull requests 功能提出任何建議**
-
 ## 如何使用
 
-* 請先自行[安裝 Docker](https://docs.docker.com)
+* [安裝 Docker](https://docs.docker.com)
 
-### PttBBS
+* 執行服務
 
-* (sudo) `docker run -d -p 8888:8888 holishing/imageptt` 後，直接 `telnet localhost 8888` 即可開始測試。
+  - PttBBS: (sudo) `docker run -d -p 8888:8888 -p 8889:8889 holishing/imageptt`
+
+  - Maple3-itoc: (sudo) `docker run -d -p 8888:8888 holishing/imageitoc`
+
+  - Maple3-WindTop-DreamBBS: (sudo) `docker run -d -p 8888:8888 holishing/imagedreambbs`
+
+  - Maple2-SOB-WDBBS: (sudo) `docker run -d -p 8888:8888 holishing/imagewdbbs`
+
+* 連線至站臺：
+
+  - 請先將終端機環境設定成 Big5 編碼，或直接用 PCMan / PCManX 連線到 telnet://127.0.0.1:8888 即可連線。
+
+  - 僅適用 PttBBS: 在 Linux / Mac OS X 終端機下直接 `telnet 127.0.0.1 8889` 即可連線。 (UTF-8 Encoding)
 
 ### 自行建置 docker image
 
 * [請參考此處](BUILD.md)
 
-## 希望的用途
-
-1. 方便讓人不用花太多步驟也能讓人體驗各版本 BBS 站台的介面
-
-2. 只要平台環境能裝具有完整功能的 Docker 並執行相關基本操作，即可利用此 repo 測試相關服務
-
 ## 建議事項
 
-* **目前僅嘗試能讓測試者自用**，若無相關把握不建議用來開放外連服務，若有相關架公開站台需求者，建議仍按照各 BBS 版本文件指示自行建站。
+* 若有用來開放外連服務等需求，請自行研究相關細節(如網路設定、資料儲存)或另按各 BBS 版本文件指示自行架設。
 
 * 查閱 https://github.com/bbslist/bbslist.github.io 可查詢你有興趣 BBS 站台是以哪個版本為基礎
 
