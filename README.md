@@ -12,7 +12,7 @@
 
   - Maple3-WindTop-DreamBBS: (sudo) `docker run -d -p 8888:8888 holishing/imagedreambbs`
 
-  - Maple2-SOB-WDBBS: (sudo) `docker run -d -p 8888:8888 holishing/imagewdbbs`
+  - Maple2-SOB-WindDustBBS: (sudo) `docker run -d -p 8888:8888 holishing/imagewdbbs`
 
 * 連線至站臺：
 
