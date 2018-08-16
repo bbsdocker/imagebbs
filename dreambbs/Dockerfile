@@ -1,0 +1,36 @@
+FROM centos:7
+MAINTAINER holishing
+
+RUN yum update -y && \
+    yum install --nogpgcheck -y \
+                gcc \
+                make \
+                vim \
+                clang \
+		glibc-devel \
+                glibc-devel.i686 \
+                libgcc.i686 \
+                libstdc++-devel.i686 \
+                ncurses-devel.i686
+
+WORKDIR /bmake-build
+RUN cd /bmake-build \
+    && sh -c "curl -L http://crufty.net/ftp/pub/sjg/bmake-20171207.tar.gz | tar -zxv" \
+    && cd bmake && ./boot-strap prefix=/usr/local && ./boot-strap prefix=/usr/local op=install
+
+RUN groupadd --gid 9999 bbs \
+    && useradd -g bbs -s /bin/bash --uid 9999 bbs
+
+USER bbs
+ENV HOME=/home/bbs
+
+RUN cd /home/bbs \
+    && sh -c "curl -L https://github.com/ccns/dreambbs/archive/1e28729ffc20d9031d03c5e9e419c18115662448.tar.gz|tar -zxv" \
+    && mv dreambbs-1e28729ffc20d9031d03c5e9e419c18115662448 dreambbs \
+    && cp -r /home/bbs/dreambbs/sample/bbs /home/
+COPY file/dreambbs_conf /home/bbs/dreambbs/dreambbs.conf
+RUN cd /home/bbs/dreambbs && bmake all install clean
+
+# Notice, in here, mbbsd started service and PROVIDE BIG5 encoding for users.
+CMD ["sh","-c","sh /home/bbs/sh/start.sh && /home/bbs/bin/bbsd 8888 && while true; do sleep 10; done"]
+EXPOSE 8888
