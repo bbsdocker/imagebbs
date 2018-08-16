@@ -1,9 +1,10 @@
-FROM centos:7
+FROM centos:6
 MAINTAINER holishing
 
 RUN yum update -y \
     && yum install -y epel-release \
     && yum install --nogpgcheck -y \
+		util-linux-ng \
                 gcc \
                 make \
                 vim \
