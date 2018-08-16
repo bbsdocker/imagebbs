@@ -41,3 +41,14 @@
 * **目前僅嘗試能讓測試者自用**，若無相關把握不建議用來開放外連服務，若有相關架公開站台需求者，建議仍按照各 BBS 版本文件指示自行建站。
 
 * 查閱 https://github.com/bbslist/bbslist.github.io 可查詢你有興趣 BBS 站台是以哪個版本為基礎
+
+## 授權 (LICENSE)
+
+* 以下引用的範例設定檔：依各專案授權方式為主
+  - pttbbs/pttbbs.conf 
+  - maplebbs-clam/config.h
+
+* 相關腳本: [MIT License](LICENSE)
+
+* 說明文件: [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)
+
