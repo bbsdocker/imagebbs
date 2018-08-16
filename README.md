@@ -44,9 +44,9 @@
 
 ## 授權 (LICENSE)
 
-* 以下引用的範例設定檔：依各專案授權方式為主
-  - pttbbs/pttbbs.conf 
-  - maplebbs-clam/config.h
+* 以下引用的範例設定檔名形式：依各專案授權方式為主
+  - <BBSNAME>/<BBSNAME>.conf 
+  - <BBSNAME>/config.h
 
 * 相關腳本: [MIT License](LICENSE)
 
