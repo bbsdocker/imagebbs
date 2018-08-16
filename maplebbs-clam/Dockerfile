@@ -28,6 +28,6 @@ RUN cd /home/bbs \
 COPY config.h /home/bbs/maplebbs-clam/include/config.h
 RUN cd /home/bbs/maplebbs-clam && make linux install clean
 
-# Notice, in here, mbbsd started service and PROVIDE UTF-8 encoding for users, if you prefer BIG-5, just remove `-e utf8`.
+# Notice, in here, mbbsd started service and PROVIDE BIG5 encoding for users.
 CMD ["sh","-c","/home/bbs/bin/account &&  /home/bbs/bin/camera && /home/bbs/bin/bbsd 8888 && while true; do sleep 10; done"]
 EXPOSE 8888
