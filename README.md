@@ -32,9 +32,9 @@
 
 ## 授權 (LICENSE)
 
-* 範例設定檔(各專案 `file/` 資料夾底下之檔案)：依各專案授權方式為主
+* 抓取之各版本 BBS 原始碼、範例設定檔(各專案 `file/` 資料夾底下之檔案)：依各專案授權方式為主
 
-* 相關腳本: [MIT License](LICENSE)
+* 相關腳本(`Dockerfile`,`Dockerfile-*`): [MIT License](LICENSE)
 
 * 說明文件: [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)
 
