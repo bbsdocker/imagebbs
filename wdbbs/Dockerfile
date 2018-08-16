@@ -26,7 +26,7 @@ RUN cd /home/bbs \
     && cd /home/bbs/wdbbs \
     && cp -r sample/bbs /home
 
-COPY wdbbs_conf /home/bbs/wdbbs/wdbbs.conf
+COPY file/wdbbs_conf /home/bbs/wdbbs/wdbbs.conf
 RUN cd /home/bbs/wdbbs && bmake all install clean
 
 # Notice, in here, mbbsd started service and PROVIDE BIG-5 encoding for users.
