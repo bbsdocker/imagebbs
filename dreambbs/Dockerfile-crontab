@@ -1,19 +1,10 @@
-FROM centos:6
+FROM holishing/imagedreambbs:runenv-f4ad744
 MAINTAINER holishing
 
 RUN yum update -y \
-    && yum install -y epel-release \
+    && yum clean all \
     && yum install --nogpgcheck -y \
-		util-linux-ng \
-		glibc-devel \
-                glibc-devel.i686 \
-                libgcc.i686 \
-                libstdc++-devel.i686 \
-                ncurses-devel.i686 \
-		cronie
-
-RUN groupadd --gid 9999 bbs \
-    && useradd -g bbs -s /bin/bash --uid 9999 bbs
+	cronie
 
 WORKDIR /home/bbs
 USER bbs
