@@ -1,9 +1,10 @@
-FROM centos:7
+FROM centos:6
 MAINTAINER holishing
 
 RUN yum update -y \
     && yum install -y epel-release \
     && yum install --nogpgcheck -y \
+		util-linux-ng \
                 gcc \
                 make \
                 clang \
@@ -21,13 +22,15 @@ RUN cd /bmake-build \
 RUN groupadd --gid 9999 bbs \
     && useradd -g bbs -s /bin/bash --uid 9999 bbs
 
+WORKDIR /home/bbs
 USER bbs
 ENV HOME=/home/bbs
 
 RUN cd /home/bbs \
     && sh -c "curl -L https://github.com/ccns/dreambbs/archive/1e28729ffc20d9031d03c5e9e419c18115662448.tar.gz|tar -zxv" \
     && mv dreambbs-1e28729ffc20d9031d03c5e9e419c18115662448 dreambbs \
-    && cp -r /home/bbs/dreambbs/sample/bbs /home/
+    && cp -r /home/bbs/dreambbs/sample/bbs /home/ \
+    && cp -r /home/bbs/dreambbs/sample/crontab /home/bbs/
 COPY file/dreambbs_conf /home/bbs/dreambbs/dreambbs.conf
 RUN cd /home/bbs/dreambbs && bmake all install clean
 

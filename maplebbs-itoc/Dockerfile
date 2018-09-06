@@ -1,10 +1,11 @@
-FROM centos:7
+FROM centos:6
 MAINTAINER holishing
 
-RUN yum update -y && \
-    yum install --nogpgcheck -y \
-                gcc \
-                make \
+RUN yum update -y    \
+    && yum clean all \
+    && yum install --nogpgcheck -y \
+                gcc   \
+                make  \
 		patch \
 		glibc-devel \
 		glibc-devel.i686 \
