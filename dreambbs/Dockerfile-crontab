@@ -1,0 +1,26 @@
+FROM centos:6
+MAINTAINER holishing
+
+RUN yum update -y \
+    && yum install -y epel-release \
+    && yum install --nogpgcheck -y \
+		util-linux-ng \
+		glibc-devel \
+                glibc-devel.i686 \
+                libgcc.i686 \
+                libstdc++-devel.i686 \
+                ncurses-devel.i686 \
+		cronie
+
+RUN groupadd --gid 9999 bbs \
+    && useradd -g bbs -s /bin/bash --uid 9999 bbs
+
+WORKDIR /home/bbs
+USER bbs
+ENV HOME=/home/bbs
+COPY file/crontab /home/bbs/crontab
+RUN crontab /home/bbs/crontab
+
+USER root
+# Notice, in here, mbbsd started service and PROVIDE BIG5 encoding for users.
+CMD ["sh","-c","service crond start && while true; do sleep 10; done"]
