@@ -1,0 +1,15 @@
+FROM centos:6
+MAINTAINER holishing
+
+# This is for building DreamBBS runtime environment for executables
+
+RUN yum update -y \
+    && yum clean all \
+    && yum install --nogpgcheck -y \
+		util-linux-ng \
+                glibc-devel.i686 \
+                ncurses-devel.i686
+ 
+RUN groupadd --gid 9999 bbs \
+    && useradd -g bbs -s /bin/bash --uid 9999 bbs
+
