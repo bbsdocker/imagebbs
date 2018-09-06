@@ -1,0 +1,19 @@
+FROM holishing/imagedreambbs:runenv-f4ad744
+MAINTAINER holishing
+
+RUN yum update -y \
+    && yum clean all \
+    && yum install -y epel-release \
+    && yum install --nogpgcheck -y \
+                gcc \
+                make \
+                clang \
+		glibc-devel \
+                libgcc.i686 \
+                libstdc++-devel.i686
+
+WORKDIR /bmake-build
+RUN cd /bmake-build \
+    && sh -c "curl -L http://crufty.net/ftp/pub/sjg/bmake-20171207.tar.gz | tar -zxv" \
+    && cd bmake && ./boot-strap prefix=/usr/local && ./boot-strap prefix=/usr/local op=install 
+
