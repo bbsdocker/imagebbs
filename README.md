@@ -10,7 +10,7 @@
 
   - Maple3-itoc: (sudo) `docker run -d -p 8888:8888 holishing/imageitoc`
 
-  - Maple3-WindTop-DreamBBS: (sudo) `docker run -d -p 8888:8888 holishing/imagedreambbs`
+  - Maple3-WindTop-DreamBBS: (sudo) `docker run -d -p 23:23 holishing/imagedreambbs`
 
   - Maple2-SOB-WindDustBBS: (sudo) `docker run -d -p 8888:8888 holishing/imagewdbbs`
 
