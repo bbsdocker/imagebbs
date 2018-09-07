@@ -51,21 +51,13 @@ RUN yum update -y \
     && cd /bmake-build \
     && sh -c "curl -L http://crufty.net/ftp/pub/sjg/bmake-20171207.tar.gz | tar -zxv" \
     && cd bmake && ./boot-strap prefix=/usr/local && ./boot-strap prefix=/usr/local op=install \
-    && cd / && rm -rf /bmake-build \
     && cd /home/bbs \
     && gosu bbs sh -c "curl -L https://github.com/ccns/dreambbs/archive/1e28729ffc20d9031d03c5e9e419c18115662448.tar.gz|tar -zxv" \
     && gosu bbs mv dreambbs-1e28729ffc20d9031d03c5e9e419c18115662448 dreambbs \
     && gosu bbs cp -r /home/bbs/dreambbs/sample/bbs /home/ \
+    && gosu bbs cp /home/bbs/dreambbs/sample/crontab /home/bbs/ \
     && gosu bbs cp /home/bbs/dreambbs.conf /home/bbs/dreambbs \
-    && cd /home/bbs/dreambbs && gosu bbs bmake all install clean && cd .. \
-    && gosu bbs crontab /home/bbs/dreambbs/sample/crontab \
-    && rm -rf /home/bbs/dreambbs \
-    && yum -y remove \
-                gcc \
-                clang \
-    && yum clean all \
-    && rm -f /usr/local/bin/bmake \
-    && rm -rf /usr/local/share/mk
+    && cd /home/bbs/dreambbs && gosu bbs bmake all install clean && cd ..
 
 # Notice, in here, mbbsd started service and PROVIDE BIG5 encoding for users.
 CMD ["sh","-c","gosu bbs sh /home/bbs/sh/start.sh && service crond start && /home/bbs/bin/bbsd 23 && while true; do sleep 10; done"]
