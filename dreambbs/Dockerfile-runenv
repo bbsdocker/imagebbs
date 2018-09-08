@@ -5,7 +5,7 @@ MAINTAINER holishing
 RUN yum update -y \
     && yum clean all \
     && yum install --nogpgcheck -y \
-		util-linux-ng \
+                util-linux-ng \
                 glibc.i686 \
                 ncurses-devel.i686 \
                 cronie

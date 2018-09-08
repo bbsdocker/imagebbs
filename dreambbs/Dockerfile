@@ -37,11 +37,11 @@ RUN set -ex; \
 RUN yum update -y \
     && yum install -y epel-release \
     && yum install --nogpgcheck -y \
-		util-linux-ng \
+                util-linux-ng \
                 gcc \
                 make \
                 clang \
-		glibc-devel \
+                glibc-devel \
                 glibc-devel.i686 \
                 libgcc.i686 \
                 libstdc++-devel.i686 \
