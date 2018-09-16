@@ -2,7 +2,9 @@ FROM centos:6
 MAINTAINER holishing
 
 # This is for building DreamBBS runtime environment for executables
-RUN yum update -y \
+RUN rm /etc/localtime \
+    && ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
+    && yum update -y \
     && yum clean all \
     && yum install --nogpgcheck -y \
                 util-linux-ng \

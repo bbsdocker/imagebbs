@@ -1,6 +1,11 @@
 FROM centos:6
 MAINTAINER holishing
 
+RUN groupadd --gid 9999 bbs \
+    && useradd -g bbs -s /bin/bash --uid 9999 bbs \
+    && rm /etc/localtime \
+    && ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
 RUN yum update -y    \
     && yum clean all \
     && yum install --nogpgcheck -y \
@@ -12,9 +17,6 @@ RUN yum update -y    \
                 libgcc.i686 \
                 libstdc++-devel.i686 \
                 ncurses-devel.i686
-
-RUN groupadd --gid 9999 bbs \
-    && useradd -g bbs -s /bin/bash --uid 9999 bbs
 
 USER bbs
 ENV HOME=/home/bbs

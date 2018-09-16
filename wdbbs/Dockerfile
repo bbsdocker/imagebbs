@@ -1,6 +1,13 @@
 FROM debian:stretch
 MAINTAINER holishing
 
+RUN groupadd --gid 99 bbs \
+    && useradd -g bbs -s /bin/bash --uid 9999 bbs \
+    && mkdir /home/bbs \
+    && chown -R bbs:bbs /home/bbs \
+    && rm /etc/localtime \
+    && ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
 RUN apt update \
     && apt upgrade -y \
     && apt-get install -y --no-install-recommends \
@@ -11,11 +18,6 @@ RUN apt update \
         ca-certificates \
 	gcc-multilib \
 	lib32ncurses5-dev
-
-RUN groupadd --gid 99 bbs \
-    && useradd -g bbs -s /bin/bash --uid 9999 bbs \
-    && mkdir /home/bbs \
-    && chown -R bbs:bbs /home/bbs
 
 USER bbs
 ENV HOME=/home/bbs

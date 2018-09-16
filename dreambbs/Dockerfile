@@ -2,7 +2,9 @@ FROM centos:6
 MAINTAINER holishing
 
 RUN groupadd --gid 9999 bbs \
-    && useradd -g bbs -s /bin/bash --uid 9999 bbs
+    && useradd -g bbs -s /bin/bash --uid 9999 bbs \
+    && rm /etc/localtime \
+    && ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 USER bbs
 COPY file/dreambbs_conf /home/bbs/dreambbs.conf
 USER root
