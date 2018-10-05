@@ -17,12 +17,16 @@
 * 執行服務
 
   - PttBBS: (sudo) `docker run -d -p 8888:8888 -p 8889:8889 bbsdocker/imageptt`
+    + Build Status: [[](https://dockerbuildbadges.quelltext.eu/status.svg?organization=bbsdocker&repository=imageptt)](https://hub.docker.com/r/bbsdocker/imageptt/builds/)
 
   - Maple3-itoc: (sudo) `docker run -d -p 8888:8888 bbsdocker/imageitoc`
+    + Build Status: [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=bbsdocker&repository=imageitoc)](https://hub.docker.com/r/bbsdocker/imageitoc/builds/)
 
   - Maple3-WindTop-DreamBBS: (sudo) `docker run -d -p 23:23 bbsdocker/imagedreambbs`
+    + Build Status: [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=bbsdocker&repository=imagedreambbs)](https://hub.docker.com/r/bbsdocker/imagedreambbs/builds/)
 
   - Maple2-SOB-WindDustBBS: (sudo) `docker run -d -p 8888:8888 bbsdocker/imagewdbbs`
+    + Build Status: [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=bbsdocker&repository=imagewdbbs)](https://hub.docker.com/r/bbsdocker/imagewdbbs/builds/)
 
 * 連線至站臺：
 
