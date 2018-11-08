@@ -22,7 +22,7 @@
   - Maple3-itoc: (sudo) `docker run -d -p 8888:8888 bbsdocker/imageitoc`
     + Build Status: [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=bbsdocker&repository=imageitoc)](https://hub.docker.com/r/bbsdocker/imageitoc/builds/)
 
-  - Maple3-WindTop-DreamBBS: (sudo) `docker run -d -p 23:23 bbsdocker/imagedreambbs`
+  - Maple3-WindTop-DreamBBS: (sudo) `docker run -d -p 8888:8888 bbsdocker/imagedreambbs`
     + Build Status: [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=bbsdocker&repository=imagedreambbs)](https://hub.docker.com/r/bbsdocker/imagedreambbs/builds/)
 
   - Maple2-SOB-WindDustBBS: (sudo) `docker run -d -p 8888:8888 bbsdocker/imagewdbbs`
