@@ -1,0 +1,12 @@
+[submodule "pttbbs"]
+	path = pttbbs
+	url = https://github.com/bbsdocker/imageptt.git
+[submodule "dreambbs"]
+	path = dreambbs
+	url = https://github.com/bbsdocker/imagedreambbs.git
+[submodule "wdbbs"]
+	path = wdbbs
+	url = https://github.com/bbsdocker/imagewdbbs.git
+[submodule "maplebbs-itoc"]
+	path = maplebbs-itoc
+	url = https://github.com/bbsdocker/imageitoc.git
