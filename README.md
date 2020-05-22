@@ -1,5 +1,7 @@
 # BBS Docker Project: imagebbs - 印象。ＢＢＳ
 
+** Docker for PttBBS 新功能：提供 Websocket 連線服務測試，使用瀏覽器即可連線測試 Docker 上建置的 BBS! **
+
 ## 本專案包含的 BBS 版本
 
 - [PttBBS](https://github.com/bbsdocker/imageptt)
@@ -12,11 +14,11 @@
 
 ## 如何使用
 
-* [安裝 Docker](https://docs.docker.com)
+* [安裝 Docker](https://docs.docker.com/get-docker)
 
 * 執行服務
 
-  - PttBBS: (sudo) `docker run -d -p 8888:8888 -p 8889:8889 bbsdocker/imageptt`
+  - PttBBS: (sudo) `docker run -d -p 8888:8888 -p 48763:48763 bbsdocker/imageptt`
     + Build Status: [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=bbsdocker&repository=imageptt)](https://hub.docker.com/r/bbsdocker/imageptt/builds/)
 
   - Maple3-itoc: (sudo) `docker run -d -p 8888:8888 bbsdocker/imageitoc`
@@ -32,7 +34,7 @@
 
   - 請先將終端機環境設定成 Big5 編碼，或直接用 PCMan / PCManX 連線到 telnet://127.0.0.1:8888 即可連線。
 
-  - 僅適用 PttBBS: 在 Linux / Mac OS X 終端機下直接 `telnet 127.0.0.1 8889` 即可連線。 (UTF-8 Encoding)
+  - 僅適用 PttBBS: 打開 Firefox 或是 Chrome/Edge 瀏覽器, 網址輸入 http://localhost:48763 ，即可連線。
 
 ### 自行建置 docker image
 
@@ -51,4 +53,3 @@
 * 相關腳本(`Dockerfile`,`Dockerfile-*`): [MIT License](LICENSE)
 
 * 說明文件: [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)
-
