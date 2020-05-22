@@ -16,6 +16,17 @@
 
 * [安裝 Docker](https://docs.docker.com/get-docker)
 
+* 拉取/更新 Docker 映像檔
+
+  - PttBBS: (sudo) `docker pull bbsdocker/imageptt`
+
+  - Maple3-itoc: (sudo) `docker pull bbsdocker/imageitoc`
+
+  - Maple3-WindTop-DreamBBS: (sudo) `docker pull bbsdocker/imagedreambbs`
+
+  - Maple2-SOB-WindDustBBS: (sudo) `docker pull bbsdocker/imagewdbbs`
+
+
 * 執行服務
 
   - PttBBS: (sudo) `docker run -d -p 8888:8888 -p 48763:48763 bbsdocker/imageptt`
