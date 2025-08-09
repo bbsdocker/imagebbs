@@ -18,7 +18,7 @@
 
 * 拉取/更新 Docker 映像檔
 
-  - PttBBS: (sudo) `docker pull bbsdocker/imageptt`
+  - PttBBS: (sudo) `docker pull ghcr.io/bbsdocker/imageptt`
 
   - Maple3-itoc: (sudo) `docker pull bbsdocker/imageitoc`
 
@@ -29,7 +29,7 @@
 
 * 執行服務
 
-  - PttBBS: (sudo) `docker run -d -p 8888:8888 -p 48763:48763 bbsdocker/imageptt`
+  - PttBBS: (sudo) `docker run -d -p 8888:8888 ghcr.io/bbsdocker/imageptt`
 
   - Maple3-itoc: (sudo) `docker run -d -p 8888:8888 bbsdocker/imageitoc`
 
@@ -40,9 +40,7 @@
 * 連線至站臺：
 
   - 請先將終端機環境設定成 Big5 編碼，或直接用 PCMan / PCManX 連線到 telnet://127.0.0.1:8888 即可連線。
-
-  - 僅適用 PttBBS: **執行本機 Docker 服務後**，打開 Firefox 或是 Chrome/Edge 瀏覽器, 網址輸入 https://bbsdocker.github.io/PttChrome-static/ ，即可連線。
-
+  - 
 ### 自行建置 docker image
 
 * [請參考此處](BUILD.md)
