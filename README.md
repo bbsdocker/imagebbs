@@ -1,7 +1,5 @@
 # BBS Docker Project: imagebbs - 印象。ＢＢＳ
 
-**Docker for PttBBS 新功能：提供 Websocket 連線服務測試，使用瀏覽器即可連線測試 Docker 上建置的 BBS!**
-
 ## 本專案包含的 BBS 版本
 
 - [PttBBS](https://github.com/bbsdocker/imageptt)
