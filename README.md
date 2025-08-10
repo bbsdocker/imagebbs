@@ -18,24 +18,18 @@
 
 * 拉取/更新 Docker 映像檔
 
-  - PttBBS: (sudo) `docker pull ghcr.io/bbsdocker/imageptt`
-
-  - Maple3-itoc: (sudo) `docker pull bbsdocker/imageitoc`
-
-  - Maple3-WindTop-DreamBBS: (sudo) `docker pull bbsdocker/imagedreambbs`
-
-  - Maple2-SOB-WindDustBBS: (sudo) `docker pull bbsdocker/imagewdbbs`
+  - PttBBS: `docker pull ghcr.io/bbsdocker/imageptt`
+  - Maple3-WindTop-DreamBBS: `docker pull ghcr.io/bbsdocker/imagedreambbs`
+  - Maple3-itoc: `docker pull bbsdocker/imageitoc`
+  - Maple2-SOB-WindDustBBS: `docker pull bbsdocker/imagewdbbs`
 
 
 * 執行服務
 
-  - PttBBS: (sudo) `docker run -d -p 8888:8888 ghcr.io/bbsdocker/imageptt`
-
+  - PttBBS: `docker run -d -p 8888:8888 ghcr.io/bbsdocker/imageptt`
+  - Maple3-WindTop-DreamBBS: `docker run -d -p 8888:8888 ghcr.io/bbsdocker/imagedreambbs`
   - Maple3-itoc: (sudo) `docker run -d -p 8888:8888 bbsdocker/imageitoc`
-
-  - Maple3-WindTop-DreamBBS: (sudo) `docker run -d -p 8888:8888 bbsdocker/imagedreambbs`
-
-  - Maple2-SOB-WindDustBBS: (sudo) `docker run -d -p 8888:8888 bbsdocker/imagewdbbs`
+  - Maple2-SOB-WindDustBBS: `docker run -d -p 8888:8888 bbsdocker/imagewdbbs`
 
 * 連線至站臺：
 
